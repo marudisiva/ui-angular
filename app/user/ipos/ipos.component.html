@@ -1,0 +1,57 @@
+
+<button type="button" class="btn btn-info"><a routerLink="/iposdetails" label>Add ipodetails</a></button><br>
+<table  class="table table-hover table-sm"  > 
+    <thead>
+
+      <tr>
+
+        <th>Ipoid</th>
+
+        <th>Companyname</th>
+
+        <th>Stockexchange</th>
+
+        <th>Pricepershare</th>
+
+        <th>Totalnoofshares</th>
+
+        <th>Opendatetime</th>
+
+
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+       <tr *ngFor="let ipodetails of ipodetailsList ">
+
+        <td>{{ipodetails.ipoid}}</td>
+
+        <td>{{ipodetails.companyname}}</td>
+
+        <td>{{ipodetails.stockexchange}}</td>
+
+        <td>{{ipodetails.pricepershare}}</td>
+
+        <td>{{ipodetails.totalnoofshares}}</td>
+
+        <td>{{ipodetails.opendatetime}}</td>
+
+
+
+
+       </tr>
+
+    </tbody><br>
+
+  </table>
+
+
+
+
+
+
+
+
+

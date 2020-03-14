@@ -1,0 +1,81 @@
+<button type="button" class="btn btn-info"><a routerLink="/manage-exchange" label>Add Stockexchange</a></button><br>
+        <table  class="table table-hover table-sm"  > 
+            <thead>
+      
+              <tr>
+      
+                <th>stockexid</th>
+      
+                <th>Stockexchange</th>
+      
+                <th>Brief</th>
+      
+                <th>Remarks</th>
+      
+                <th>Contactaddress</th>
+      
+      
+              </tr>
+      
+            </thead>
+      
+            <tbody>
+      
+               <tr *ngFor="let stockexch of stockexchangeList ">
+      
+                <td>{{stockexch.stockexid}}</td>
+      
+                <td>{{stockexch.stockexchange}}</td>
+      
+                <td>{{stockexch.brief}}</td>
+      
+                <td>{{stockexch.remarks}}</td>
+      
+                <td>{{stockexch.contactaddress}}</td>
+      
+                <td><button (click)="deleteStockExchange(stockexch)" class='btn btn-danger'><i class="fa fa-futboll-0">Delete</i></button> &nbsp;
+
+                  <button (click)="updateStockExchange(stockexch)" class='btn btn-primary'
+             
+                  data-toggle="modal" data-target="#myModal">Update</button>
+             
+                 </td>
+      
+      
+               </tr>
+      
+            </tbody><br>
+      
+          </table>
+          <button type="button" class="btn btn-warning btn-lg"> <a routerLink="/admin">Back</a></button>
+      
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          
+      
+      
+      
+       
+      
+      
+      
+      
+

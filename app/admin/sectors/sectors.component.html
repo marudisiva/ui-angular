@@ -1,0 +1,52 @@
+
+	<div class="b">
+
+<div class="sectors">
+	<div [hidden]="submitted" style="width: 400px;">  
+	<form [formGroup]="sectorssaveform" #saveSectors1 (ngSubmit)="saveSectors(saveSectors1)">
+		<h2 style="color: aliceblue;">Add Sectors</h2>
+		<hr>
+  
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-id-badge"></i></span>
+				<input type="number" class="form-control" formControlName="sectorid" placeholder="Sectorid" required="required">
+				<div class="alert alert-danger" *ngIf = "(Sectorid.touched) && (Sectorid.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="Sectorid.errors.required">Sectorid is Required</span>                      
+                </div>
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-ellipsis-v"></i></span>
+				<input type="text" class="form-control" formControlName="sectorname" placeholder="Sectorname" required="required">
+				<div class="alert alert-danger" *ngIf = "(Sectorname.touched) && (Sectorname.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="Sectorname.errors.required">SectorName is Required</span>                       
+                </div>
+			</div>
+		</div>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-commenting"></i></span>
+				<input type="text" class="form-control"  formControlName="brief" placeholder="Brief" required="required">
+				<div class="alert alert-danger" *ngIf = "(Brief.touched) && (Brief.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="Brief.errors.required">Brief is Required</span>                       
+                </div>
+			</div>
+        </div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary btn-lg"[disabled]=!sectorssaveform.valid>Add</button>
+			
+		</div>
+		
+    </form>
+</div>
+</div>
+	</div>
+<div [hidden]="!submitted">  
+	<h4>Sector Added SuccessFully!</h4>  
+	<button (click)="sectorssaveform()"></button> 
+ </div>  

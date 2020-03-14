@@ -1,0 +1,83 @@
+
+<div class="b">
+<div class="iposdetails">
+	<div [hidden]="submitted" style="width: 400px;">  
+	<form [formGroup]="ipodetailssaveform" #saveIpoDetails1 (ngSubmit)="saveIpoDetails(saveIpoDetails1)">
+		<h2 style="color: aliceblue;">Add Ipodetails</h2>
+        <hr>
+        
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-id-badge"></i></span>
+				<input type="number" class="form-control" formControlName="ipoid" placeholder="ipoid" required="required">
+				<div class="alert alert-danger" *ngIf = "(Ipoid.touched) && (Ipoid.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="Ipoid.errors.required">Ipoid is Required</span>                      
+                </div>
+			</div>
+		</div>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-building"></i></span>
+				<input type="text" class="form-control" formControlName="companyname" placeholder="Companyname" required="required">
+				<div class="alert alert-danger" *ngIf = "(Companyname.touched) && (Companyname.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="Companyname.errors.required">CompanyName is Required</span>                       
+                </div>
+			</div>
+		</div>
+	
+       
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-exchange"></i></span>
+				<input type="text" class="form-control"  formControlName="stockexchange" placeholder="stockexchange" required="required">
+				<div class="alert alert-danger" *ngIf = "(Stockexchange.touched)&&(Stockexchange.invalid)"   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Stockexchange.errors.required">Stockexchange is Required</span>
+			</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-money"></i></span>
+				<input type="number" class="form-control"  formControlName="pricepershare" placeholder=" pricepershare" required="required">
+				<div class="alert alert-danger" *ngIf = "(Pricepershare.touched)&&(Pricepershare.invalid)"   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Pricepershare.errors.required">Pricepershare is Required</span>
+			</div>
+			</div>
+    </div>
+    <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-line-chart"></i></span>
+				<input type="number" class="form-control"  formControlName="totalnoofshares" placeholder="totalnoofshares" required="required">
+				<div class="alert alert-danger" *ngIf = "(Totalnoofshares.touched)&&(Totalnoofshares.invalid)"   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Totalnoofshares.errors.required">Totalnoofshares is Required</span>
+			</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
+				<input type="number" class="form-control"  formControlName="opendatetime" placeholder="opendatetime" required="required">
+				<div class="alert alert-danger" *ngIf = "(Opendatetime.touched)&&(Opendatetime.invalid)"   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Opendatetime.errors.required">opendatetime is Required</span>
+			</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary btn-lg"[disabled]=!ipodetailssaveform.valid>Add</button>
+			
+		</div>
+		
+    </form>
+</div>
+</div>
+<div [hidden]="!submitted">  
+	<h4>Ipos Updated SuccessFully!</h4>  
+	<button (click)="ipodetailssaveform()"></button> 
+ </div>  
+</div>                    

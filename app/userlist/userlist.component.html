@@ -1,0 +1,63 @@
+
+        <table  class="table table-hover table-sm"  > 
+        <thead>
+  
+          <tr>
+  
+            <th>UserName</th>
+  
+            <th>Email</th>
+  
+            <th>Phone</th>
+  
+            <th>Firstname</th>
+  
+            <th>Lastname</th>
+  
+            <th>Address</th>
+  
+            <th>Age</th>
+  
+          </tr>
+  
+        </thead>
+  
+        <tbody>
+  
+           <tr *ngFor="let user of userList ">
+  
+            <td>{{user.username}}</td>
+  
+            <td>{{user.email}}</td>
+  
+            <td>{{user.phone}}</td>
+  
+            <td>{{user.firstname}}</td>
+  
+            <td>{{user.lastname}}</td>
+  
+            <td>{{user.address}}</td>
+  
+            <td>{{user.age}}</td>
+
+            <td><button (click)="deleteUser(user)" class='btn btn-danger'><i class="fa fa-futboll-0">Delete</i></button> &nbsp;
+
+              <button (click)="updateUser(user)" class='btn btn-info'
+         
+              data-toggle="modal" data-target="#myModal">Update</button>
+         
+             </td>
+  
+           </tr>
+  
+        </tbody><br>
+  
+      </table>
+
+  
+  
+
+  
+  
+  
+  

@@ -1,0 +1,73 @@
+
+
+<div class="b">
+<div class="manage-exchange">
+	<div [hidden]="submitted" style="width: 400px;">  
+	<form [formGroup]="stockexchangesaveform" #saveStockExchange1 (ngSubmit)="saveStockExchange(saveStockExchange1)">
+		<h2 style="color: aliceblue;">Stock Exchange</h2>
+		<hr>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-id-badge"></i></span>
+				<input type="number" class="form-control" formControlName="stockexid" placeholder="stockexid" required="required">
+				<div class="alert alert-danger" *ngIf = "(Stockexid.touched) && (Stockexid.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="Stockexid.errors.required">stockexid is Required</span>                       
+                </div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-exchange"></i></span>
+				<input type="text" class="form-control"  formControlName="stockexchange" placeholder="Stockexchange" required="required">
+				<div class="alert alert-danger" *ngIf = "(Stockexchange.touched)&& (Stockexchange.invalid) "   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Stockexchange.errors.required">Phone is Required</span>
+				  </div>
+			</div>
+        </div>
+		
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-commenting"></i></span>
+				<input type="text" class="form-control"  formControlName="brief" placeholder=" brief" required="required">
+				<div class="alert alert-danger" *ngIf = "(Brief.touched)&&(Brief.invalid)"   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Brief.errors.required">Brief is Required</span>
+			</div>
+			</div>
+    </div>
+    <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-edit"></i></span>
+				<input type="text" class="form-control"  formControlName="remarks" placeholder="remarks" required="required">
+				<div class="alert alert-danger" *ngIf = "(Remarks.touched)&&(Remarks.invalid)"   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Remarks.errors.required">Remarks is Required</span>
+			</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-address-card"></i></span>
+				<input type="text" class="form-control"  formControlName="contactaddress" placeholder="contactaddress" required="required">
+				<div class="alert alert-danger" *ngIf = "(Contactaddress.touched)&&(Contactaddress.invalid)"   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Contactaddress.errors.required">contactaddress is Required</span>
+			</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary btn-lg" [disabled]=!stockexchangesaveform.valid>Add</button>
+			
+		</div>
+		
+    </form>
+</div>
+</div>
+</div>
+<div [hidden]="!submitted">  
+	<h4>Exchange Added SuccessFully!</h4>  
+	<button (click)="stockexchangesaveform()"></button> 
+ </div>  
+                            

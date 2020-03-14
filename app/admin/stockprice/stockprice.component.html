@@ -1,0 +1,82 @@
+
+<div class="b"><div class="manage-company">
+	<div [hidden]="submitted" style="width: 400px;">  
+	<form [formGroup]="stockpricesaveform" #saveStockPrice1 (ngSubmit)="saveStockPrice(saveStockPrice1)">
+		<h2 style="color: aliceblue;">Add Stockprice</h2>
+		<hr>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-building"></i></span>
+				<input type="text" class="form-control" formControlName="companyname" placeholder="Companyname" required="required">
+				<div class="alert alert-danger" *ngIf = "(Companyname.touched) && (Companyname.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="Companyname.errors.required">CompanyName is Required</span>                       
+                </div>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-exchange"></i></span>
+				<input type="text" class="form-control"  formControlName="stockexchange" placeholder="Stockexchange" required="required">
+				<div class="alert alert-danger" *ngIf = "(Stockexchange.touched)&&(Stockexchange.invalid)"   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Stockexchange.errors.required">Stockexchange is Required</span>
+			</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-money"></i></span>
+				<input type="number" class="form-control"  formControlName="currentprice" placeholder=" Currentprice" required="required">
+				<div class="alert alert-danger" *ngIf = "(Currentprice.touched)&&(Currentprice.invalid)"   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Currentprice.errors.required">Currentprice is Required</span>
+			</div>
+			</div>
+    </div>
+    <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+				<input type="text" class="form-control"  formControlName="date" placeholder="Date" required="required">
+				<div class="alert alert-danger" *ngIf = "(Date.touched)&&(Date.invalid)"   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Date.errors.required">Date is Required</span>
+			</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+				<input type="text" class="form-control"  formControlName="time" placeholder="time" required="required">
+				<div class="alert alert-danger" *ngIf = "(Time.touched)&&(Time.invalid)"   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Time.errors.required">time is Required</span>
+			</div>
+			</div>
+		</div>
+		<!-- <div class="form-group">
+			<div class="input-group">
+		   
+			 <label for="uploadfile">Upload file	</label>
+		   
+			  <input formControlName="uploadfile" class="form-control" type="file" (change)="selectFile($event)">
+		   
+			</div>
+		   
+		   </div> -->
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary btn-lg" [disabled]=!stockpricesaveform.valid>Add</button>
+			
+		</div>
+		
+    </form>
+</div>
+</div>
+</div>
+
+<div [hidden]="!submitted">  
+	<h4>Stockprice Added SuccessFully!</h4>  
+	<button (click)="stockpricesaveform()"></button> 
+ </div>  
+                        

@@ -1,0 +1,100 @@
+<div class="b">
+<div class="manage-company">
+	<div [hidden]="submitted" style="width: 400px;">  
+	<form [formGroup]="companysaveform" #saveCompany1 (ngSubmit)="saveCompany(saveCompany1)">
+		<h2 style="color: aliceblue;">Add Company</h2>
+		<hr>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-building"></i></span>
+				<input type="text" class="form-control" formControlName="companyname" placeholder="Companyname" required="required">
+				<div class="alert alert-danger" *ngIf = "(Companyname.touched) && (Companyname.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="Companyname.errors.required">CompanyName is Required</span>                       
+                </div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-money"></i></span>
+				<input type="number" class="form-control" formControlName="turnover" placeholder="Turnover" required="required">
+				<div class="alert alert-danger" *ngIf = "(Turnover.touched) && (Turnover.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="Turnover.errors.required">Turnover is Required</span>                      
+                </div>
+			</div>
+		</div>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
+				<input type="text" class="form-control"  formControlName="ceoname" placeholder="Ceoname" required="required">
+				<div class="alert alert-danger" *ngIf = "(Ceoname.touched) && (Ceoname.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="Ceoname.errors.required">Ceoname is Required</span>                       
+                </div>
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-users"></i></span>
+				<input type="text" class="form-control"  formControlName="bod" placeholder="Bod" required="required">
+				<div class="alert alert-danger" *ngIf = "(Bod.touched)&& (Bod.invalid) "   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Bod.errors.required">Phone is Required</span>
+				  </div>
+			</div>
+        </div>
+		
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-tasks"></i></span>
+				<input type="number" class="form-control"  formControlName="listedinse" placeholder="listedinse" required="required">
+				<div class="alert alert-danger" *ngIf = "(Listedinse.touched)&&(Listedinse.invalid)"   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Listedinse.errors.required">listedinse is Required</span>
+			</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-ellipsis-v"></i></span>
+				<input type="text" class="form-control"  formControlName="sector" placeholder=" sector" required="required">
+				<div class="alert alert-danger" *ngIf = "(Sector.touched)&&(Sector.invalid)"   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Sector.errors.required">Address is Required</span>
+			</div>
+			</div>
+    </div>
+    <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-edit"></i></span>
+				<input type="text" class="form-control"  formControlName="remarks" placeholder="remarks" required="required">
+				<div class="alert alert-danger" *ngIf = "(Remarks.touched)&&(Remarks.invalid)"   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Remarks.errors.required">Remarks is Required</span>
+			</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+				<input type="number" class="form-control"  formControlName="stockcode" placeholder="stockcode" required="required">
+				<div class="alert alert-danger" *ngIf = "(Stockcode.touched)&&(Stockcode.invalid)"   
+                style="margin-top: 5px;">  
+				  <span *ngIf="Stockcode.errors.required">stockcode is Required</span>
+			</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary btn-lg" [disabled]=!companysaveform.valid>Add</button>
+			
+		</div>
+		
+    </form>
+</div>
+</div>
+<div [hidden]="!submitted">  
+	<h4>Company Added SuccessFully!</h4>  
+	<button (click)="companysaveform()"></button> 
+ </div>  
+</div>
